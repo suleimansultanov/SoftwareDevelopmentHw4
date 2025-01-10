@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework 4 - Software Development</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9;
+        }
+
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            margin: auto;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .submit-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            background-color: #45a049;
+        }
+
+        .links a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        .links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        function validateForm(event) {
+            const name = document.getElementById("name").value;
+            const middleInitial = document.getElementById("middle-initial").value;
+            const lastName = document.getElementById("last-name").value;
+            const matriculation = document.getElementById("matriculation").value;
+            const email = document.getElementById("email").value;
+            const feedback = document.getElementById("feedback").value;
+
+            const alphaRegex = /^[A-Za-z]+$/;
+            const numericRegex = /^[0-9]+$/;
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (!alphaRegex.test(name) || !alphaRegex.test(lastName) || (middleInitial && !alphaRegex.test(middleInitial))) {
+                alert("Name, middle initial, and last name must only contain alphabetic characters.");
+                event.preventDefault();
+                return false;
+            }
+
+            if (!numericRegex.test(matriculation)) {
+                alert("Matriculation must only contain numbers.");
+                event.preventDefault();
+                return false;
+            }
+
+            if (!emailRegex.test(email)) {
+                alert("Please enter a valid email address.");
+                event.preventDefault();
+                return false;
+            }
+
+            if (feedback.trim() === "") {
+                alert("Feedback cannot be empty.");
+                event.preventDefault();
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Homework 4: Software Development</h1>
+    <form onsubmit="validateForm(event)">
+        <label for="name">First Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="middle-initial">Middle Initial:</label>
+        <input type="text" id="middle-initial" name="middle-initial">
+
+        <label for="last-name">Last Name:</label>
+        <input type="text" id="last-name" name="last-name" required>
+
+        <label for="matriculation">Matriculation:</label>
+        <input type="text" id="matriculation" name="matriculation" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="country">Country:</label>
+        <select id="country" name="country" required>
+            <option value="">Select your country</option>
+            <option value="usa">USA</option>
+            <option value="germany">Germany</option>
+            <option value="india">India</option>
+            <option value="china">China</option>
+            <option value="brazil">Brazil</option>
+        </select>
+
+        <label for="program">Graduate Program:</label>
+        <select id="program" name="program" required>
+            <option value="">Select your program</option>
+            <option value="computer-science">Computer Science</option>
+            <option value="data-science">Data Science</option>
+            <option value="business-management">Business Management</option>
+            <option value="mechanical-engineering">Mechanical Engineering</option>
+        </select>
+
+        <label for="start-date">Start Date:</label>
+        <input type="date" id="start-date" name="start-date" required>
+
+        <label for="feedback">Feedback:</label>
+        <textarea id="feedback" name="feedback" rows="4" required></textarea>
+
+        <p class="links">Learn more about <a href="https://en.wikipedia.org/wiki/Software_development_life_cycle" target="_blank">SDLC</a>, <a href="https://agilemanifesto.org/" target="_blank">Agile</a>, <a href="https://www.w3schools.com/css/" target="_blank">CSS</a>, and <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">JavaScript</a>.</p>
+
+        <button type="submit" class="submit-btn">Submit</button>
+    </form>
+</body>
+</html>
+
