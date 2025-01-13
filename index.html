@@ -16,7 +16,7 @@
             padding: 20px;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            max-width: 500px;
+            max-width: 600px;
             margin: auto;
         }
 
@@ -53,6 +53,28 @@
 
         .links a:hover {
             text-decoration: underline;
+        }
+
+        .checkbox-inline {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .checkbox-inline input {
+            margin-right: 5px;
+        }
+
+        .radio-inline {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .radio-inline input {
+            margin-right: 5px;
         }
     </style>
     <script>
@@ -95,8 +117,9 @@
     </script>
 </head>
 <body>
-    <h1>Homework 4: Software Development</h1>
-    <form onsubmit="validateForm(event)">
+    <h1>Welcome to My Homepage</h1>
+    <h2>Personal Info</h2>
+    <form onsubmit="validateForm(event)" action="https://your-server-endpoint.com" method="POST">
         <label for="name">First Name:</label>
         <input type="text" id="name" name="name" required>
 
@@ -134,13 +157,111 @@
         <label for="start-date">Start Date:</label>
         <input type="date" id="start-date" name="start-date" required>
 
+        <label for="heard-from">I have heard about the graduate program from:</label>
+        <div class="checkbox-inline">
+            <div>
+                <input type="checkbox" id="media" name="heard-from" value="Media">
+                <label for="media">Media</label>
+            </div>
+            <div>
+                <input type="checkbox" id="add" name="heard-from" value="Add">
+                <label for="add">Add</label>
+            </div>
+            <div>
+                <input type="checkbox" id="agency" name="heard-from" value="Agency">
+                <label for="agency">Agency</label>
+            </div>
+            <div>
+                <input type="checkbox" id="other" name="heard-from" value="Other">
+                <label for="other">Other</label>
+            </div>
+        </div>
+
+        <label>When I finish my study, I will:</label>
+        <div class="radio-inline">
+            <div>
+                <input type="radio" id="return" name="future-plan" value="Return to my country" required>
+                <label for="return">Return to my country</label>
+            </div>
+            <div>
+                <input type="radio" id="job" name="future-plan" value="Find a job in Europe">
+                <label for="job">Find a job in Europe</label>
+            </div>
+            <div>
+                <input type="radio" id="training" name="future-plan" value="Do the practical training and decide">
+                <label for="training">Do the practical training and decide</label>
+            </div>
+        </div>
+
         <label for="feedback">Feedback:</label>
         <textarea id="feedback" name="feedback" rows="4" required></textarea>
 
-        <p class="links">Learn more about <a href="https://en.wikipedia.org/wiki/Software_development_life_cycle" target="_blank">SDLC</a>, <a href="https://agilemanifesto.org/" target="_blank">Agile</a>, <a href="https://www.w3schools.com/css/" target="_blank">CSS</a>, and <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">JavaScript</a>.</p>
+        <p class="links">
+            Learn more about <a href="https://en.wikipedia.org/wiki/Software_development_life_cycle" target="_blank">SDLC</a>,
+            <a href="https://agilemanifesto.org/" target="_blank">Agile SDLC</a>,
+            <a href="https://www.w3schools.com/css/" target="_blank">CSS</a>, and
+            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">JavaScript</a>.
+        </p>
+
+        <p>
+            I will write a paragraph for each methodology of SDLC. There are many of them but I will suggest a few. My suggestions and reasons are as follows:
+            <ul>
+                <li><strong>A:</strong> Agile Methodology - Highly adaptive and iterative, suitable for dynamic environments.</li>
+                <li><strong>B:</strong> Waterfall Methodology - Best for projects with clear requirements and well-defined stages.</li>
+                <li><strong>C:</strong> Spiral Model - Combines iterative development with risk assessment, ideal for complex projects.</li>
+            </ul>
+        </p>
+
+        <p>
+            Among so many SDLC Methodologies, the ones that are in the Agile classification are better. Among Agile SDLC Methods, I have also a few suggestions. My suggestions and reasons are as follows:
+            <ul>
+                <li><strong>A:</strong> Scrum - Focuses on delivering small, incremental updates frequently, promoting teamwork and adaptability.</li>
+                <li><strong>B:</strong> Kanban - Great for visualizing workflows and reducing bottlenecks in development processes.</li>
+                <li><strong>C:</strong> Extreme Programming (XP) - Emphasizes high-quality code through continuous feedback and testing.</li>
+                <li><strong>D:</strong> Lean Development - Optimizes efficiency by eliminating waste and focusing on delivering value quickly.</li>
+            </ul>
+        </p>
+        <p>
+            In this software development course of SRH we learned:
+            <ul>
+                <li><strong>A:</strong> C language</li>
+                <li><strong>B:</strong> JavaScript, CSS, and HTML</li>
+                <li><strong>C:</strong> SDLC Methodologies</li>
+                <li><strong>D:</strong> Many other helpful information</li>
+            </ul>
+        </p>
+
+        <p>
+            I Have used CSS in the webpage and there are 3 ways to include CSS in a webpage as follows
+            <ul>
+                <li><strong>A:</strong>Inline CSS</li>
+                <li><strong>B:</strong>Internal CSS</li>
+                <li><strong>C:</strong>External CSS</li>
+            </ul>
+        </p>
+        <p>
+            The reasons Css used in a webpage are
+            <ul>
+                <li><strong>A:</strong>Styling and Visual Appeal</li>
+                <li><strong>B:</strong>Responsive Design</li>
+                <li><strong>C:</strong>Separation of Concerns</li>
+            </ul>
+        </p>
+
+        <p>
+            We also use  Javascript in webpage development. The main reasons are as follows:
+            <ul>
+                <li><strong>A:</strong>Form validation</li>
+                <li><strong>B:</strong>User Feedback Alerts are triggered if any of the fields do not meet the validation criteria, providing immediate feedback to users and improving the user experience</li>
+                <li><strong>C:</strong>Preventing Invalid Submissions By using event.preventDefault() in case of invalid input, JavaScript prevents the form from being submitted with errors, maintaining data integrity.</li>
+            </ul>
+        </p>
+        
+        <p>
+            I have done this project by myself and accept the consequences if found other ways. You can reach me at: suleimansultanov@gmail.com
+        </p>
 
         <button type="submit" class="submit-btn">Submit</button>
     </form>
 </body>
 </html>
-
